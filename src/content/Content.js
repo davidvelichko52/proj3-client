@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
+import New from './pages/New'
 
 const Content = props => {
   return (
@@ -20,6 +21,9 @@ const Content = props => {
       } />
       <Route path="/signup" render={
         () => <Signup user={props.user} updateToken={props.updateToken} />
+      } />
+      <Route path="/new" render={
+        () => <New user={props.user} />
       } />
     </div>
   )
