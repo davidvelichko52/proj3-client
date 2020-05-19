@@ -27,7 +27,7 @@ const Nav = props => {
           <Link to="/profile">Profile</Link>
         </li>
         <li>
-          <Link to="/new">Add Post</Link>
+          <Link to="/new">New Post</Link>
         </li>
         <li>
           <a href="/" onClick={handleLogout}>Logout</a>

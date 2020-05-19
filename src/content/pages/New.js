@@ -1,9 +1,10 @@
 import React from 'react';
 
 const New = props => {
-    return (
-        <div>New Post</div>
-    )
+  return (
+    <div>New posts form</div>
+  )
 }
-
 export default New
+
+
