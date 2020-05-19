@@ -22,9 +22,9 @@ const Content = props => {
       <Route path="/signup" render={
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
-    <Route path="/new" render={
-        () => <New user={props.user} />
-      } />
+      <Route path="/new" render={
+          () => <New user={props.user} />
+        } />
     </div>
   )
 }
