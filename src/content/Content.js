@@ -12,7 +12,6 @@ import New from './pages/New'
 
 const Content = props => {
   let [posts, setPosts] = useState([])
-  // let [currPosts, setCurrPosts] = useState({})
 
   useEffect (() => {
 callApi()
@@ -21,7 +20,6 @@ callApi()
 
   const callApi = () => {
   axios.get(process.env.REACT_APP_SERVER_URL + 'posts')
-  // .then(response => response.json())
 .then(response => {
   let data = response.data
   console.log('here is the data', data)

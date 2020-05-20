@@ -13,12 +13,12 @@ import Nav from './nav/Nav'
 const App = props => {
   // Declare state variables
   let [user, setUser] = useState(null)
-  // let [posts, setPosts] = useState([])
+ 
 
   // useEffect hook (on load)
   useEffect(() => {
     decodeToken()
-    // callApi()
+    
   }, []) // Empty array, meaning only run this on page load
 
   const decodeToken = () => {
@@ -55,17 +55,6 @@ const App = props => {
     decodeToken()
   }
 
-//   const callApi = () => {
-//   fetch(process.env.REACT_APP_SERVER_URL + 'posts')
-//   .then(response => response.json())
-// .then(data => {
-//   console.log('here is the data', data)
-//   setPosts(data)
-// })
-// .catch(err => {
-//   console.log('Error!', err)
-//   })
-// }
 
 
 
