@@ -1,6 +1,7 @@
 // Packages
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
+import axios from 'axios'
 
 // Custom componentd
 import Home from './pages/Home'
@@ -11,9 +12,32 @@ import New from './pages/New'
 import Faves from './pages/Faves'
 
 const Content = props => {
+
+  let [posts, setPosts] = useState([])
+
+  useEffect (() => {
+callApi()
+
+  },[])
+
+  const callApi = () => {
+  axios.get(process.env.REACT_APP_SERVER_URL + 'posts')
+.then(response => {
+  let data = response.data
+  console.log('here is the data', data)
+  setPosts(data)
+})
+.catch(err => {
+  console.log('Error!', err)
+  })
+}
+
   return (
     <div className="container">
-      <Route exact path="/" component={Home} />
+  
+      <Route exact path="/" render={
+        () => <Home posts={posts} />
+      } />
       <Route path="/login" render={
         () => <Login user={props.user} updateToken={props.updateToken} />
       } />
@@ -24,7 +48,7 @@ const Content = props => {
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/new" render={
-        () => <New user={props.user} />
+        () => <New post={props.post} user={props.user} />
       } />
       <Route path="/faves" render={
         () => <Faves user={props.user} />
