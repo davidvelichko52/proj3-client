@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import New from './pages/New'
+import Faves from './pages/Faves'
 
 const Content = props => {
 
@@ -47,8 +48,11 @@ callApi()
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/new" render={
-          () => <New post={props.post} user={props.post}/>
-        } />
+        () => <New post={props.post} user={props.user} />
+      } />
+      <Route path="/faves" render={
+        () => <Faves user={props.user} />
+      } />
     </div>
   )
 }
