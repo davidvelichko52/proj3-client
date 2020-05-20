@@ -10,9 +10,11 @@ import Signup from './pages/Signup'
 import New from './pages/New'
 
 const Content = props => {
+  //fetch
   return (
     <div className="container">
-      <Route exact path="/" component={Home} />
+    
+      <Route exact path="/" component={Home}  />
       <Route path="/login" render={
         () => <Login user={props.user} updateToken={props.updateToken} />
       } />
@@ -23,7 +25,7 @@ const Content = props => {
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/new" render={
-          () => <New user={props.user} />
+          () => <New post={props.post}/>
         } />
     </div>
   )
