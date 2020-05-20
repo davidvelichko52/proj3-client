@@ -11,6 +11,7 @@ import Signup from './pages/Signup'
 import New from './pages/New'
 
 const Content = props => {
+
   let [posts, setPosts] = useState([])
 
   useEffect (() => {
@@ -46,8 +47,8 @@ callApi()
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/new" render={
-        () => <New user={props.post} />
-      } />
+          () => <New post={props.post} user={props.post}/>
+        } />
     </div>
   )
 }
