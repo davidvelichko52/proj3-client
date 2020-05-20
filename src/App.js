@@ -13,10 +13,12 @@ import Nav from './nav/Nav'
 const App = props => {
   // Declare state variables
   let [user, setUser] = useState(null)
+ 
 
   // useEffect hook (on load)
   useEffect(() => {
     decodeToken()
+    
   }, []) // Empty array, meaning only run this on page load
 
   const decodeToken = () => {
@@ -53,13 +55,16 @@ const App = props => {
     decodeToken()
   }
 
+
+
+
   return (
     <Router>
       <div className="App">
         <Nav user={user} updateToken={updateToken} />
         <Header />
         <main>
-          <Content user={user} updateToken={updateToken} />
+          <Content user={user} updateToken={updateToken}/>
         </main>
         <Footer />
       </div>
