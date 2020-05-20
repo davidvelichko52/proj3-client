@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import New from './pages/New'
+import Faves from './pages/Faves'
 
 const Content = props => {
   return (
@@ -24,6 +25,9 @@ const Content = props => {
       } />
       <Route path="/new" render={
         () => <New user={props.user} />
+      } />
+      <Route path="/faves" render={
+        () => <Faves user={props.user} />
       } />
     </div>
   )

@@ -30,7 +30,7 @@ const Nav = props => {
           <Link to="/new">New Post</Link>
         </li>
         <li>
-          <Link to="/faves">Favorites Page</Link>
+          <Link to="/faves">Favorites</Link>
         </li>
         <li>
           <a href="/" onClick={handleLogout}>Logout</a>
