@@ -4,7 +4,11 @@ const Home = props => {
 
   let posters = props.posts.map((p) => {
     return (
-  <h2>{p.content}</h2>
+<div>
+ <img id="homepic" src={p.pic} alt={p.caption} />
+    <h2>{p.content}</h2>
+  <h3>{p.caption}</h3>
+</div>
     )
   })
   

@@ -41,13 +41,24 @@ const Profile = props => {
     return <Redirect to="/login" />
   }
 
+
+  let posters = props.posts.map((p) => {
+    return (
+<div>
+ <img id="homepic" src={p.pic} alt={p.caption} />
+    <h2>{p.content}</h2>
+  <h3>{p.caption}</h3>
+</div>
+    )
+  })
+
   return (
     <div>
       <h2>
         {props.user.firstname}
       </h2>
       <img src={props.user.pic} alt={props.user.firstname} />
-      <h2>{secretMessage}</h2>
+      {posters}
     </div>
   )
 }
