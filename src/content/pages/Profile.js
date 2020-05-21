@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
 
+
+  
   useEffect(() => {
     // Get the token from local storage
     let token = localStorage.getItem('boilerToken')
