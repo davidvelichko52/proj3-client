@@ -13,7 +13,6 @@ const Home = props => {
   })
   
 
-
   return (
     <div>
      {posters}
