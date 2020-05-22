@@ -35,8 +35,8 @@ callApi()
 
   return (
     <div className="container">
-      <Route exact path="/more" render={
-        () => <More posts={posts} />
+      <Route exact path="/more/:id" render={
+        (props) => <div><More posts={posts} id={props.match.params.id} /></div>
       } />
       <Route exact path="/" render={
         () => <Home posts={posts} />

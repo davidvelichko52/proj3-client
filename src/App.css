@@ -79,5 +79,9 @@ nav a:hover {
   border: 2px solid black;
   border-radius: 5px;
 }
+#morepic{
+  height: 200px;
+  width: auto;
+}
 
 

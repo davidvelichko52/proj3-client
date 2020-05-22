@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
@@ -45,14 +45,13 @@ const Profile = props => {
 
   let posters = props.posts.map((p) => {
     return (
-<div>
+< Link to={`/more/${p._id}`}>
  <div id="profileposts">
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
  </div>
- <br/>
-</div>
+</Link>
     )
   })
 
@@ -73,9 +72,3 @@ const Profile = props => {
 }
 
 export default Profile
-
-
-// const callApi = () => {
-// axios.get(process.env.REACT_APP_SERVER_URL + 'profile', {
-//   headers: { 'Authorization': 'Any string will do' }
-// })
