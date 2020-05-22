@@ -46,11 +46,11 @@ const Profile = props => {
   let posters = props.posts.map((p) => {
     return (
 <div>
-  <div id="profileposts">
- <img id="homepic" src={p.pic} alt={p.caption} />
-    <h2>{p.content}</h2>
-  <h3>{p.caption}</h3>
-  </div>
+ <div id="profileposts">
+   <img id="homepic" src={p.pic} alt={p.caption} />
+   <h2>{p.content}</h2>
+   <h3>{p.caption}</h3>
+ </div>
  <br/>
 </div>
     )
