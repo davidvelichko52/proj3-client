@@ -34,7 +34,7 @@ callApi()
 
   return (
     <div className="container">
-  
+
       <Route exact path="/" render={
         () => <Home posts={posts} />
       } />

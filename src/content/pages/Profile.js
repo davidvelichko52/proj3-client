@@ -5,7 +5,6 @@ const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
 
 
-  
   useEffect(() => {
     // Get the token from local storage
     let token = localStorage.getItem('boilerToken')
@@ -66,3 +65,9 @@ const Profile = props => {
 }
 
 export default Profile
+
+
+// const callApi = () => {
+// axios.get(process.env.REACT_APP_SERVER_URL + 'profile', {
+//   headers: { 'Authorization': 'Any string will do' }
+// })
