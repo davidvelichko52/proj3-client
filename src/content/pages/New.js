@@ -69,7 +69,8 @@ const handleSubmit = e => {
         body: JSON.stringify({
          pic,
          content,
-         caption
+         caption,
+         user: props.user._id
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -103,7 +104,7 @@ const handleSubmit = e => {
           <button onClick={showUploadWidget}>Upload pics</button>
         </div>
         <div>
-      
+
           {/* <textarea name="content" rows="5" cols="18" onChange={e => setContent(e.target.value)} /> */}
           <ReactBootStrap.InputGroup>
              <ReactBootStrap.InputGroup.Prepend>

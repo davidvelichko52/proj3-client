@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
+
 
 const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
+  let token = localStorage.getItem('boilerToken')
+
+
+  const handleDelete = (id) => {
+      fetch(process.env.REACT_APP_SERVER_URL + "posts/" + id, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.status === 204 ? {} : response.json())
+      .then(() => {
+        console.log('Successful DELETE!')
+      })
+    }
 
 
   useEffect(() => {
     // Get the token from local storage
-    let token = localStorage.getItem('boilerToken')
 
     // Make a call to a protected route
     fetch(process.env.REACT_APP_SERVER_URL + 'profile', {
       headers: {
         'Authorization': `Bearer ${token}`
-      }
+      },
     })
     .then(response => {
       console.log('Response', response)
@@ -37,25 +52,33 @@ const Profile = props => {
     })
   })
 
+
+
+
   // Make sure there is a user before trying to show their info
   if (!props.user) {
     return <Redirect to="/login" />
   }
 
 
-  let posters = props.posts.map((p) => {
+
+  var posters = props.posts.map((p) => {
+    if (p.user === props.user._id) {
     return (
-<div>
+< Link to={`/more/${p._id}`}>
  <div id="profileposts">
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
- </div>
- <br/>
-</div>
-    )
-  })
+  <button onClick={() => {
+      handleDelete(p._id)
+    }}>Delete</button>
 
+ </div>
+</Link>
+    )
+  }
+  })
   return (
     <div>
       <div id="userInfo">
@@ -71,11 +94,4 @@ const Profile = props => {
     </div>
   )
 }
-
 export default Profile
-
-
-// const callApi = () => {
-// axios.get(process.env.REACT_APP_SERVER_URL + 'profile', {
-//   headers: { 'Authorization': 'Any string will do' }
-// })
