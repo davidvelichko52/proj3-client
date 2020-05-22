@@ -50,6 +50,7 @@ const Profile = props => {
  <img id="homepic" src={p.pic} alt={p.caption} />
     <h2>{p.content}</h2>
   <h3>{p.caption}</h3>
+  
 </div>
     )
   })
