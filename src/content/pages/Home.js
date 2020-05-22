@@ -34,7 +34,7 @@ const handleClick = (postId) => {
   <button onClick={() => handleClick(p._id)}>Like</button>
   </div>
 </a>
-
+                                
     )
   })
   return (
