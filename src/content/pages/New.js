@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import * as ReactBootStrap from "react-bootstrap"
 
 const New = props => {
 let [pic, setPic] = useState('')
@@ -102,8 +103,14 @@ const handleSubmit = e => {
           <button onClick={showUploadWidget}>Upload pics</button>
         </div>
         <div>
-          <h3>Content:</h3>
-          <textarea name="content" rows="5" cols="18" onChange={e => setContent(e.target.value)} />
+      
+          {/* <textarea name="content" rows="5" cols="18" onChange={e => setContent(e.target.value)} /> */}
+          <ReactBootStrap.InputGroup>
+             <ReactBootStrap.InputGroup.Prepend>
+                <ReactBootStrap.InputGroup.Text>Content</ReactBootStrap.InputGroup.Text>
+                </ReactBootStrap.InputGroup.Prepend>
+            <ReactBootStrap.FormControl as="textarea" aria-label="With textarea" name="content" onChange={e => setContent(e.target.value)}/>
+          </ReactBootStrap.InputGroup>
         </div>
         <div>
           <h3>Caption:</h3>
