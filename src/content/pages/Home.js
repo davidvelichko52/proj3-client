@@ -26,11 +26,15 @@ const handleClick = (postId) => {
 
   let posters = props.posts.map((p) => {
     return (
-  <div id="homepost">
+
+<a href="/more">
+<div id="homepost" >
   <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
   <p>{p.caption}</p>
   <button onClick={() => handleClick(p._id)}>Like</button>
   </div>
+</a>
+
     )
   })
   return (

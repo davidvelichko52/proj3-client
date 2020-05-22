@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 
 const Profile = props => {
@@ -65,7 +65,7 @@ const Profile = props => {
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
-<div>
+< Link to={`/more/${p._id}`}>
  <div id="profileposts">
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
@@ -75,8 +75,7 @@ const Profile = props => {
     }}>Delete</button>
 
  </div>
- <br/>
-</div>
+</Link>
     )
   }
   })
@@ -95,6 +94,4 @@ const Profile = props => {
     </div>
   )
 }
-
-
 export default Profile

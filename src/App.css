@@ -99,3 +99,8 @@ nav a:hover {
   color: black;
   margin: 10px;
 }
+
+#morepic{
+  height: 200px;
+  width: auto;
+}
