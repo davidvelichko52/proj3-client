@@ -32,18 +32,17 @@ const handleClick = (postId) => {
   <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
   <p>{p.caption}</p>
   <button onClick={() => handleClick(p._id)}>Like</button>
-</div>
+  </div>
 </a>
+
     )
   })
-  
-
   return (
     <div>
      {posters}
     </div>
-    
-   
+
+
   )
 }
 
