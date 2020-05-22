@@ -1,14 +1,19 @@
 import React from 'react'
+import * as ReactBootStrap from "react-bootstrap"
 
 const Home = props => {
 
   let posters = props.posts.map((p) => {
     return (
 <div>
- <img id="homepic" src={p.pic} alt={p.caption} />
+  <div id="homepost">
+  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
+  
     <h2>{p.content}</h2>
-  <h3>{p.caption}</h3>
-</div>
+    <p>{p.caption}</p>
+  </div>
+ <br/>
+  </div>
     )
   })
   
@@ -17,6 +22,8 @@ const Home = props => {
     <div>
      {posters}
     </div>
+    
+   
   )
 }
 
