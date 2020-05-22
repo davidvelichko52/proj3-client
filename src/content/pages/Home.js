@@ -1,4 +1,5 @@
 import React from 'react'
+import * as ReactBootStrap from "react-bootstrap"
 
 const Home = props => {
 const handleClick = (postId) => {
@@ -22,13 +23,17 @@ const handleClick = (postId) => {
     console.log('ERROR SUBMITTING:', err)
   })
 }
+
   let posters = props.posts.map((p) => {
     return (
-      <div>
- <img id="homepic" src={p.pic} alt={p.caption} />
-    <h2>{p.content}</h2>
-  <h3>{p.caption}</h3>
+  <div id="homepost">
+  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
+  
+  <h2>{p.content}</h2>
+  <p>{p.caption}</p>
   <button onClick={() => handleClick(p._id)}>Like</button>
+</div>
+  <br/>
 </div>
     )
   })
@@ -38,6 +43,8 @@ const handleClick = (postId) => {
     <div>
      {posters}
     </div>
+    
+   
   )
 }
 

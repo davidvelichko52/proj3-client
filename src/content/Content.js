@@ -10,6 +10,7 @@ import Profile from './pages/Profile'
 import Signup from './pages/Signup'
 import New from './pages/New'
 import Faves from './pages/Faves'
+import More from './pages/More'
 
 const Content = props => {
 
@@ -34,7 +35,9 @@ callApi()
 
   return (
     <div className="container">
-  
+      <Route exact path="/more" render={
+        () => <More posts={posts} />
+      } />
       <Route exact path="/" render={
         () => <Home posts={posts} />
       } />

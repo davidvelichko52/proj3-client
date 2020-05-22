@@ -59,4 +59,25 @@ nav a:hover {
   width: auto;
 }
 
+#profileName{
+  font-size: 60px;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: rgb(77, 151, 117);
+}
+#userInfo{
+  border: 3px solid black;
+  border-radius: 20px;
+  margin-bottom: 70px;
+}
+
+#homepost{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+#profileposts{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
 

@@ -5,7 +5,6 @@ const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
 
 
-  
   useEffect(() => {
     // Get the token from local storage
     let token = localStorage.getItem('boilerToken')
@@ -47,23 +46,36 @@ const Profile = props => {
   let posters = props.posts.map((p) => {
     return (
 <div>
- <img id="homepic" src={p.pic} alt={p.caption} />
-    <h2>{p.content}</h2>
-  <h3>{p.caption}</h3>
-  
+ <div id="profileposts">
+   <img id="homepic" src={p.pic} alt={p.caption} />
+   <h2>{p.content}</h2>
+   <h3>{p.caption}</h3>
+ </div>
+ <br/>
 </div>
     )
   })
 
   return (
     <div>
-      <h2>
-        {props.user.firstname}
-      </h2>
+      <div id="userInfo">
       <img src={props.user.pic} alt={props.user.firstname} />
-      {posters}
+      <h1 id="profileName">
+        {props.user.firstname}
+      </h1>
+      </div>
+    <div>
+    {posters}
+    </div>
+
     </div>
   )
 }
 
 export default Profile
+
+
+// const callApi = () => {
+// axios.get(process.env.REACT_APP_SERVER_URL + 'profile', {
+//   headers: { 'Authorization': 'Any string will do' }
+// })
