@@ -39,7 +39,7 @@ callApi()
         (props) => <div><More posts={posts} id={props.match.params.id} /></div>
       } />
       <Route exact path="/" render={
-        () => <Home posts={posts} />
+        () => <Home user={props.user} posts={posts} />
       } />
       <Route path="/login" render={
         () => <Login user={props.user} updateToken={props.updateToken} />

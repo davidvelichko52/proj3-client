@@ -1,49 +1,60 @@
 import React from 'react'
 import * as ReactBootStrap from "react-bootstrap"
 
+
+  
 const Home = props => {
-const handleClick = (postId) => {
-  fetch(process.env.REACT_APP_SERVER_URL + 'faves/' + postId)
-
-  .then(response => {
-    console.log('RESPONSE', response)
-    // Handle non-200 responses
-    if (!response.ok) {
-      return
-    }
-
-    // We got a good (200) response, get the token
-    response.json()
-    .then(result => {
-      console.log('Result:', result)
-      // Giving the token back up to App.js
+  const handleSubmit = (e) => {
+    let token = localStorage.getItem('boilerToken')
+    e.preventDefault()
+    fetch(process.env.REACT_APP_SERVER_URL + 'faves',{
+      method: 'POST', 
+      body: JSON.stringify({
+        userId: props.user.id,
+        postId: e.currentTarget.value
+      }),
+      headers: {
+      'Content-Type': 'application/json', 'Authorization':  `Bearer ${token}`
+      }
     })
-  })
-  .catch(err => {
-    console.log('ERROR SUBMITTING:', err)
-  })
+    .then(response =>{webkitConvertPointFromNodeToPage
+      response.json()
+      console.log(response)
+    }
+  )
 }
 
-  let posters = props.posts.map((p) => {
+  if (props.user){
+    let posters = props.posts.map((p) => {
+      return (
+  
+        <div id="homepost" >
+          <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
+          <p>{p.caption}</p>
+          <form onSubmit={handleSubmit}>
+            <button type='submit'>Like</button>
+            <input type='hidden' value={p._id} />
+          </form>
+        </div>
+  
+  
+      )
+    })
     return (
-
-<a href="/more">
-<div id="homepost" >
-  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
-  <p>{p.caption}</p>
-  <button onClick={() => handleClick(p._id)}>Like</button>
-  </div>
-</a>
-                                
+      <div>
+        {posters}
+      </div>
+  
+  
     )
-  })
-  return (
-    <div>
-     {posters}
-    </div>
+  }
 
 
-  )
+return (
+<div>
+  <h1> Welcome to our Social Media Site </h1>
+</div>
+)
 }
 
 export default Home
