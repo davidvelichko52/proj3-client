@@ -55,6 +55,7 @@ const Home = props => {
       )
     })
     return (
+ 
 <div>
   <h1> Welcome to our Social Media Site </h1>
         {posters}
