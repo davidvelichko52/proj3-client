@@ -70,6 +70,7 @@ const Profile = props => {
 
  <div id="profileposts">
  < Link to={`/more/${p._id}`}>
+
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
@@ -77,10 +78,10 @@ const Profile = props => {
   <button onClick={() => {
       handleDelete(p._id)
     }}>Delete</button>
-
+  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} >EDIT</button></Link>
  </div>
-
 </div>
+
     )
   }
   })
