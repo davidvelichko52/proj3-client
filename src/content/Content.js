@@ -14,47 +14,28 @@ import More from './pages/More'
 
 const Content = props => {
 
-  let [posts, setPosts] = useState([])
-
-  useEffect (() => {
-callApi()
-
-  },[])
-
-  const callApi = () => {
-  axios.get(process.env.REACT_APP_SERVER_URL + 'posts')
-.then(response => {
-  let data = response.data
-  console.log('here is the data', data)
-  setPosts(data)
-})
-.catch(err => {
-  console.log('Error!', err)
-  })
-}
-
   return (
     <div className="container">
       <Route exact path="/more/:id" render={
-        (props) => <div><More  id={props.match.params.id} /></div>
+        (props) => <div><More id={props.match.params.id} /></div>
       } />
       <Route exact path="/" render={
-        () => <Home posts={posts} />
+        () => <Home user={props.user} />
       } />
+      <Route path="/faves" render={
+          () => <Faves user={props.user} />
+        } />
       <Route path="/login" render={
         () => <Login user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/profile" render={
-        () => <Profile user={props.user} posts={posts} />
+        () => <Profile user={props.user} />
       } />
       <Route path="/signup" render={
         () => <Signup user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/new" render={
         () => <New post={props.post} user={props.user} />
-      } />
-      <Route path="/faves" render={
-        () => <Faves user={props.user} />
       } />
     </div>
   )

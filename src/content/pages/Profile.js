@@ -6,7 +6,7 @@ const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
   let token = localStorage.getItem('boilerToken')
 
-
+  // console.log('PROPS', props)
   const handleDelete = (id) => {
       fetch(process.env.REACT_APP_SERVER_URL + "posts/" + id, {
         method: 'DELETE',
@@ -62,7 +62,7 @@ const Profile = props => {
   }
 
 
-
+  console.log('PROPSSS', props.posts)
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
