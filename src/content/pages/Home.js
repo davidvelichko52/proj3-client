@@ -59,7 +59,8 @@ const Home = props => {
       )
     })
     return (
-  <div>
+
+<div>
   <h1> Welcome to our Social Media Site </h1>
         {posters}
  </div>
@@ -68,4 +69,6 @@ const Home = props => {
 }
 
 
+
+}
 export default Home
