@@ -11,10 +11,13 @@ import Signup from './pages/Signup'
 import New from './pages/New'
 import Faves from './pages/Faves'
 import More from './pages/More'
+import Edit from './pages/Edit'
 
 const Content = props => {
 
   let [posts, setPosts] = useState([])
+  let [currentPost, setCurrentPost] = useState('')
+
 
   useEffect (() => {
 callApi()
@@ -33,6 +36,11 @@ callApi()
   })
 }
 
+const handleCurrentPost = (e, post) => {
+  console.log('reseting the current post for editing to', post);
+  setCurrentPost(post)
+}
+
   return (
     <div className="container">
       <Route exact path="/more/:id" render={
@@ -45,7 +53,7 @@ callApi()
         () => <Login user={props.user} updateToken={props.updateToken} />
       } />
       <Route path="/profile" render={
-        () => <Profile user={props.user} posts={posts} />
+        () => <Profile user={props.user} posts={posts} handleCurrentPost={handleCurrentPost} />
       } />
       <Route path="/signup" render={
         () => <Signup user={props.user} updateToken={props.updateToken} />
@@ -55,6 +63,9 @@ callApi()
       } />
       <Route path="/faves" render={
         () => <Faves user={props.user} />
+      } />
+    <Route path="/edit" render={
+        () => <Edit user={props.user} post={currentPost} />
       } />
     </div>
   )
