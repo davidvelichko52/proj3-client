@@ -38,6 +38,10 @@ const App = props => {
         // The user is valid, token is good
         console.log('User and token are good!')
         setUser(decodedUser)
+
+        // set local storage user to userID
+        // local storage only lets you use strings (or JSON strings)
+        localStorage.setItem('user', decodedUser._id);
       }
     }
     else {
