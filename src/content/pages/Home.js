@@ -52,10 +52,11 @@ const Home = props => {
   if (props.user){
     let posters = posts.map((p, index) => {
       return (
-  
         <div key={index} id="homepost" >
+          <Link to={`/more/${p._id}`}>
           <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
           <p>{p.caption}</p>
+        </Link>
           <button onClick={() => {handleSubmit(p._id)}}>Like</button>
         </div>
   
@@ -63,24 +64,16 @@ const Home = props => {
       )
     })
     return (
+ 
 <div>
   <h1> Welcome to our Social Media Site </h1>
-</div>
- <div>
         {posters}
- </div>
-
-< Link to={`/more/${p._id}`}>
-<div id="homepost" >
-  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
-  <p>{p.caption}</p>
-  <button onClick={() => handleClick(p._id)}>Like</button>
-  </div>
-  </Link>
-                                
+ </div>                    
     )
   }
 
 
 
+  
+}
 export default Home
