@@ -3,14 +3,12 @@ import axios from 'axios'
 import {  Link } from 'react-router-dom'
 import * as ReactBootStrap from "react-bootstrap"
 
-
-  
 const Home = props => {
   let [posts, setPosts] = useState([])
-
   useEffect (() => {
     callApi()
   },[])
+
 
   const callApi = () => {
     // console.log('yooo', props.user._id);
@@ -33,7 +31,7 @@ const Home = props => {
     let token = localStorage.getItem('boilerToken')
     // e.preventDefault()
     fetch(process.env.REACT_APP_SERVER_URL + 'faves',{
-      method: 'POST', 
+      method: 'POST',
       body: JSON.stringify({
         userId: props.user._id,
         postId: postId
@@ -48,39 +46,26 @@ const Home = props => {
     }
   )
 }
-
   if (props.user){
     let posters = posts.map((p, index) => {
       return (
-  
         <div key={index} id="homepost" >
+          <Link to={`/more/${p._id}`}>
           <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
           <p>{p.caption}</p>
+        </Link>
           <button onClick={() => {handleSubmit(p._id)}}>Like</button>
         </div>
-  
-  
       )
     })
     return (
-<div>
+  <div>
   <h1> Welcome to our Social Media Site </h1>
-</div>
- <div>
         {posters}
  </div>
-
-< Link to={`/more/${p._id}`}>
-<div id="homepost" >
-  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
-  <p>{p.caption}</p>
-  <button onClick={() => handleClick(p._id)}>Like</button>
-  </div>
-  </Link>
-                                
     )
   }
-
+}
 
 
 export default Home

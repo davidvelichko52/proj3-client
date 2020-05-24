@@ -78,7 +78,8 @@ const Profile = props => {
   <button onClick={() => {
       handleDelete(p._id)
     }}>Delete</button>
-  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} >EDIT</button></Link>
+  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e
+  , p._id)} >EDIT</button></Link>
  </div>
 </div>
 
