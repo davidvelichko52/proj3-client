@@ -1,4 +1,5 @@
 import React from 'react'
+import {  Link } from 'react-router-dom'
 import * as ReactBootStrap from "react-bootstrap"
 
 const Home = props => {
@@ -27,13 +28,13 @@ const handleClick = (postId) => {
   let posters = props.posts.map((p) => {
     return (
 
-<a href="/more">
+< Link to={`/more/${p._id}`}>
 <div id="homepost" >
   <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
   <p>{p.caption}</p>
   <button onClick={() => handleClick(p._id)}>Like</button>
   </div>
-</a>
+  </Link>
                                 
     )
   })
