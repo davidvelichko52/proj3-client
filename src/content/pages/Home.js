@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {  Link } from 'react-router-dom'
 import * as ReactBootStrap from "react-bootstrap"
 
 
@@ -62,20 +63,24 @@ const Home = props => {
       )
     })
     return (
-      <div>
+<div>
+  <h1> Welcome to our Social Media Site </h1>
+</div>
+ <div>
         {posters}
-      </div>
-  
-  
+ </div>
+
+< Link to={`/more/${p._id}`}>
+<div id="homepost" >
+  <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
+  <p>{p.caption}</p>
+  <button onClick={() => handleClick(p._id)}>Like</button>
+  </div>
+  </Link>
+                                
     )
   }
 
 
-return (
-<div>
-  <h1> Welcome to our Social Media Site </h1>
-</div>
-)
-}
 
 export default Home

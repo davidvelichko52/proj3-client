@@ -17,6 +17,7 @@ const Profile = props => {
       .then(response => response.status === 204 ? {} : response.json())
       .then(() => {
         console.log('Successful DELETE!')
+        window.location.reload(false);
       })
     }
 
@@ -65,17 +66,21 @@ const Profile = props => {
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
-< Link to={`/more/${p._id}`}>
+      <div>
+
  <div id="profileposts">
+ < Link to={`/more/${p._id}`}>
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
+   </Link>
   <button onClick={() => {
       handleDelete(p._id)
     }}>Delete</button>
 
  </div>
-</Link>
+
+</div>
     )
   }
   })
