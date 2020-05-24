@@ -15,6 +15,7 @@ import Edit from './pages/Edit'
 
 const Content = props => {
 
+
   let [posts, setPosts] = useState([])
   let [currentPost, setCurrentPost] = useState('')
 
@@ -44,11 +45,14 @@ const handleCurrentPost = (e, post) => {
   return (
     <div className="container">
       <Route exact path="/more/:id" render={
-        (props) => <div><More posts={posts} id={props.match.params.id} /></div>
+        (props) => <div><More id={props.match.params.id} /></div>
       } />
       <Route exact path="/" render={
-        () => <Home posts={posts} />
+        () => <Home user={props.user} />
       } />
+      <Route path="/faves" render={
+          () => <Faves user={props.user} />
+        } />
       <Route path="/login" render={
         () => <Login user={props.user} updateToken={props.updateToken} />
       } />
@@ -60,9 +64,6 @@ const handleCurrentPost = (e, post) => {
       } />
       <Route path="/new" render={
         () => <New post={props.post} user={props.user} />
-      } />
-      <Route path="/faves" render={
-        () => <Faves user={props.user} />
       } />
     <Route path="/edit" render={
         () => <Edit user={props.user} post={currentPost} />

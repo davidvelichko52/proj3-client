@@ -8,6 +8,7 @@ const Nav = props => {
     e.preventDefault()
     // Update the state of the App
     props.updateToken()
+    localStorage.clear('user');
   }
 
   let links = (

@@ -6,7 +6,7 @@ const Profile = props => {
   let [secretMessage, setSecretMessage] = useState('')
   let token = localStorage.getItem('boilerToken')
 
-
+  // console.log('PROPS', props)
   const handleDelete = (id) => {
       fetch(process.env.REACT_APP_SERVER_URL + "posts/" + id, {
         method: 'DELETE',
@@ -17,6 +17,7 @@ const Profile = props => {
       .then(response => response.status === 204 ? {} : response.json())
       .then(() => {
         console.log('Successful DELETE!')
+        window.location.reload(false);
       })
     }
 
@@ -61,13 +62,15 @@ const Profile = props => {
   }
 
 
-
+  console.log('PROPSSS', props.posts)
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
+      <div>
 
  <div id="profileposts">
-   < Link to={`/more/${p._id}`}>
+ < Link to={`/more/${p._id}`}>
+
    <img id="homepic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
@@ -77,6 +80,7 @@ const Profile = props => {
     }}>Delete</button>
   <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} >EDIT</button></Link>
  </div>
+</div>
 
     )
   }
