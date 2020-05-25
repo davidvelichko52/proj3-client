@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Faves = props => {
     let [faves, setFaves] = useState([])
+    let [posts, setPosts] = useState([])
 
     useEffect (() => {
       getFaves()
@@ -16,7 +17,7 @@ const Faves = props => {
         console.log('user', userId)
 
         // this fetch gets all FAVES associated with a USER
-        fetch(process.env.REACT_APP_SERVER_URL + 'faves/' + userId, {
+        fetch(process.env.REACT_APP_SERVER_URL + 'faves/user/' + userId, {
             method: 'GET',
             headers: {
             'Content-Type': 'application/json', 'Authorization':  `Bearer ${token}`
@@ -24,8 +25,12 @@ const Faves = props => {
         })
         .then(response => response.json())
         .then(json => {
-            console.log('JSON', json);
+            console.log('HERE IS ALL THE JSONS!!!!!', json);
+            console.log(json.allFav)
             setFaves(json);
+        })
+        .finally(() => {
+            console.log(faves, 'FAVES')
         })
     }
 
@@ -36,6 +41,21 @@ const Faves = props => {
           <div key={index} id="homepost" >
             <img variant="top" id="homepic" src={f.pic} alt={f.caption} />
             <p>{f.caption}</p>
+            <button onClick= { () => {
+                console.log(process.env.REACT_APP_SERVER_URL + 'faves/' + f.faveId)
+                console.log(f.faveId, 'HIHIHIHI')
+                 fetch(process.env.REACT_APP_SERVER_URL + 'faves/' + f.faveId, {
+                    method: 'DELETE',
+                    headers: {
+                    'Content-Type': 'application/json' 
+                    }
+                })
+                .then(response => response.json())
+                .finally(() => {
+                    getFaves()
+                })
+            }} 
+            value={f.faveId}>Unlike</button>
           </div>
         )
       })
