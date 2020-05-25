@@ -63,7 +63,7 @@ const Faves = props => {
     return (
         <div>
             <h1>
-                faves
+                My Commodities
             </h1>
             {faveObjects}
         </div>
