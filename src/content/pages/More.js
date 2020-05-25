@@ -44,9 +44,11 @@ const handleSubmit = e => {
         'Authorization': `Bearer ${token}`
       }
     })
+    
       .catch(err => {
           console.log('ERROR SUBMITTING:', err)
         })
+        window.location.reload(false);
   }
 
   console.log('post is', post.comments)
