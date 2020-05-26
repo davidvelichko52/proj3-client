@@ -9,6 +9,7 @@ const Nav = props => {
     // Update the state of the App
     props.updateToken()
     localStorage.clear('user');
+    window.location.reload(false);
   }
 
   let links = (
@@ -50,9 +51,9 @@ const Nav = props => {
           <ReactBootStrap.Nav.Link href="#/faves">Favorites</ReactBootStrap.Nav.Link>
           </Link>
     
-       
-          <a  className="nav-link" href="/" onClick={handleLogout}>Logout</a>
-    
+          <Link to="/login" >
+          <ReactBootStrap.Nav.Link  className="nav-link" href="/login" onClick={handleLogout}>Logout</ReactBootStrap.Nav.Link>
+          </Link>
           </ReactBootStrap.Nav>
     )
   }

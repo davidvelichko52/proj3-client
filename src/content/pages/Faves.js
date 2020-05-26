@@ -30,12 +30,10 @@ const Faves = props => {
     }
     let faveObjects = faves.map((f, index) => {
         return (
-          <div key={index} id="homepost" >
-            <img variant="top" id="homepic" src={f.pic} alt={f.caption} />
+          <div key={index} id="favePost" >
+            <img variant="top" id="favepic" src={f.pic} alt={f.caption} />
             <p>{f.caption}</p>
             <button onClick= { () => {
-                console.log(process.env.REACT_APP_SERVER_URL + 'faves/' + f.faveId)
-                console.log(f.faveId, 'HIHIHIHI')
                  fetch(process.env.REACT_APP_SERVER_URL + 'faves/' + f.faveId, {
                     method: 'DELETE',
                     headers: {

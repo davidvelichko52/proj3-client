@@ -104,7 +104,7 @@ const handleSubmit = e => {
           <button onClick={showUploadWidget}>Upload pics</button>
         </div>
         <div>
-            <textarea placeholder="Text Content" ><input  name="content"  onChange={e => setContent(e.target.value)}></input></textarea>
+            <textarea placeholder="Text Content" name="content"  onChange={e => setContent(e.target.value)}/>
         </div>
         <div>
           <input name="caption" placeholder="caption goes here" onChange={e => setCaption(e.target.value)} required/>
