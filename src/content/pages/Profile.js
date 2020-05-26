@@ -62,34 +62,35 @@ const Profile = props => {
   }
 
 
-  console.log('PROPSSS', props.posts)
+  
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
-      <div>
+      
 
- <div id="profileposts">
+ <div id="profilePost">
  < Link to={`/more/${p._id}`}>
 
-   <img id="homepic" src={p.pic} alt={p.caption} />
+   <img id="profilePostPic" src={p.pic} alt={p.caption} />
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
    </Link>
   <button onClick={() => {
       handleDelete(p._id)
-    }}>Delete</button>
-  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e
-  , p._id)} >EDIT</button></Link>
+
+    }}><span role="img" aria-label="img">🗑</span></button>
+  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} ><span role="img" aria-label="img">✏</span></button></Link>
+
  </div>
-</div>
+
 
     )
   }
   })
   return (
     <div>
-      <div id="userInfo">
-      <img class="profilePic" src={props.user.pic} alt={props.user.firstname} />
+      <div >
+      <img id="profilePic" src={props.user.pic} alt={props.user.firstname} />
       <h1 id="profileName">
         {props.user.firstname}
       </h1>

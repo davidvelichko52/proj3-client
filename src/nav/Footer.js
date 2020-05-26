@@ -3,7 +3,15 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-      Made by us in 2020
+      <div>
+      Designed by:
+      </div>
+      Alex Han,
+      David Velichko,
+      Sam Hawkins
+      <div>
+      AKA: DA BOIZ
+      </div>
     </footer>
   )
 }
