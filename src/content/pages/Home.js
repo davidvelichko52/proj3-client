@@ -49,7 +49,9 @@ if (props.user){
         <img id="homePostPic" variant="top"  src={p.pic} alt={p.caption} />
         <p>{p.caption}</p>
       </Link>
+
         <button onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍</span></button>
+
       </div>
     )
   })
@@ -60,8 +62,8 @@ if (props.user){
     )
   }
 return (
-<div>
-  <h1> Welcome to our Social Media Site </h1>
+<div class= "home">
+  <h1> Welcome to FriendHub 😉 </h1>
 </div>
 )
 
