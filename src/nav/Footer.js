@@ -10,7 +10,7 @@ const Footer = () => {
       David Velichko,
       Sam Hawkins
       <div>
-      AKA: DA BOIZ
+      AKA: DA BOIZ 😎
       </div>
     </footer>
   )
