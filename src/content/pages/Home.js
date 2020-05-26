@@ -53,7 +53,7 @@ if (props.user){
         <p>{p.caption}</p>
       </Link>
 
-        <button onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍</span></button>
+        <button onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍🏻</span></button>
 
       </div>
     )

@@ -74,7 +74,7 @@ const handleSubmit = e => {
           <input name="content" rows="5" cols="18" placeholder="Comment" onChange={e => setComment(e.target.value)}/>
         </div>
         <br />
-        <button type="submit">Sign Me Up!</button>
+        <button type="submit">Comment!</button>
       </form>
 </div>
       )
