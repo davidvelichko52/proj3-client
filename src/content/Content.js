@@ -45,7 +45,7 @@ const handleCurrentPost = (e, post) => {
   return (
     <div className="container">
       <Route exact path="/more/:id" render={
-        (props) => <div><More id={props.match.params.id} /></div>
+        (props) => <div><More id={props.match.params.id} user={props.user} /></div>
       } />
       <Route exact path="/" render={
         () => <Home user={props.user} />

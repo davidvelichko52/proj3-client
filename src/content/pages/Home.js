@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import * as ReactBootStrap from "react-bootstrap"
 import {  Link } from 'react-router-dom'
 
 const Home = props => {
@@ -45,12 +44,14 @@ const Home = props => {
 if (props.user){
   let posters = posts.map((p, index) => {
     return (
-      <div key={index} id="homepost" >
+      <div key={index} id="homePost" >
         <Link to={`/more/${p._id}`}>
-        <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
+        <img id="homePostPic" variant="top"  src={p.pic} alt={p.caption} />
         <p>{p.caption}</p>
       </Link>
-        <button onClick={() => {handleSubmit(p._id)}}>👍🏻</button>
+
+        <button onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍</span></button>
+
       </div>
     )
   })
@@ -65,5 +66,7 @@ return (
   <h1> Welcome to FriendHub 😉 </h1>
 </div>
 )
+
+
 }
 export default Home

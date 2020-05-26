@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react'
-
 const Faves = props => {
     let [faves, setFaves] = useState([])
     let [posts, setPosts] = useState([])
-
     useEffect (() => {
       getFaves()
     },[])
-
     const getFaves = () => {
         console.log('props', props);
         let token = localStorage.getItem('boilerToken')
-
         // this gets the USER ID wherever you want it (on the client)
         let userId = localStorage.getItem('user');
         console.log('user', userId)
-
         // this fetch gets all FAVES associated with a USER
         fetch(process.env.REACT_APP_SERVER_URL + 'faves/user/' + userId, {
             method: 'GET',
@@ -33,11 +28,8 @@ const Faves = props => {
             console.log(faves, 'FAVES')
         })
     }
-
-
     let faveObjects = faves.map((f, index) => {
         return (
-    
           <div key={index} id="homepost" >
             <img variant="top" id="homepic" src={f.pic} alt={f.caption} />
             <p>{f.caption}</p>
@@ -59,7 +51,6 @@ const Faves = props => {
           </div>
         )
       })
-
     return (
         <div>
             <h1>
@@ -69,5 +60,4 @@ const Faves = props => {
         </div>
     )
 }
-
 export default Faves
