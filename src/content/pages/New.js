@@ -104,17 +104,9 @@ const handleSubmit = e => {
           <button onClick={showUploadWidget}>Upload pics</button>
         </div>
         <div>
-
-          {/* <textarea name="content" rows="5" cols="18" onChange={e => setContent(e.target.value)} /> */}
-          <ReactBootStrap.InputGroup>
-             <ReactBootStrap.InputGroup.Prepend>
-                <ReactBootStrap.InputGroup.Text>Content</ReactBootStrap.InputGroup.Text>
-                </ReactBootStrap.InputGroup.Prepend>
-            <ReactBootStrap.FormControl as="textarea" aria-label="With textarea" name="content" onChange={e => setContent(e.target.value)}/>
-          </ReactBootStrap.InputGroup>
+            <textarea placeholder="Text Content" ><input  name="content"  onChange={e => setContent(e.target.value)}></input></textarea>
         </div>
         <div>
-          <h3>Caption:</h3>
           <input name="caption" placeholder="caption goes here" onChange={e => setCaption(e.target.value)} required/>
         </div>
         <br />

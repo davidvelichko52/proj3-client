@@ -1,6 +1,8 @@
 // Packages
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 
 const Login = props => {
   // Declare and initialize state variables
@@ -53,14 +55,12 @@ const Login = props => {
       <h2>Login</h2>
       <span className="red">{message}</span>
       <form onSubmit={handleSubmit}>
-          <div>
-            <label>Email:</label>
-            <input type="email" name="email" onChange={e => setEmail(e.target.value)} />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" name="password" onChange={e => setPassword(e.target.value)} />
-          </div>
+            <FormGroup>
+            <input placeholder="email" type="email" name="email" onChange={e => setEmail(e.target.value)} />
+            </FormGroup>
+              <FormGroup>
+            <input placeholder="password" type="password" name="password" onChange={e => setPassword(e.target.value)} />
+            </FormGroup>
           <button type="submit">Beam Me Up!</button>
         </form>
     </div>

@@ -62,9 +62,10 @@ function showUploadWidget(e) {
 const handleUpdate = e => {
     let token = localStorage.getItem('boilerToken')
     e.preventDefault()
-
-    console.log('submit', pic, content, caption )
-    fetch(process.env.REACT_APP_SERVER_URL + 'posts/edit' + props.post, {
+    console.log('submit')
+    console.log("URL", process.env.REACT_APP_SERVER_URL + 'posts/edit/' + props.post);
+    console.log("id", props.post);
+    fetch(process.env.REACT_APP_SERVER_URL + 'posts/edit/' + props.post, {
         method: 'PUT',
         body: JSON.stringify({
          pic,
@@ -76,28 +77,24 @@ const handleUpdate = e => {
           'Authorization': `Bearer ${token}`
         }
       })
-      .then(response =>{
-        response.json()
-        setIsSubmit(true)
+      .then(response => {
+        //console.log('looking at response.json', response.json());
+        // setIsSubmit(true)
         setPic('')
+        setContent('')
         setCaption('')
-        window.location.reload(false);
 
-      }
-    )
-        .catch(err => {
-            console.log('ERROR SUBMITTING:', err)
-          })
+    })
     }
+
 
     if (isSubmit) {
       return <Redirect to="/profile" />
     }
-
+    console.log('submit end')
     console.log(props.post);
 
   return (
-
     <div>
     // <p>Editing the post {props.currentPost}</p>
 
@@ -108,16 +105,10 @@ const handleUpdate = e => {
         </div>
         <div>
 
-          <ReactBootStrap.InputGroup>
-             <ReactBootStrap.InputGroup.Prepend>
-                <ReactBootStrap.InputGroup.Text>Content</ReactBootStrap.InputGroup.Text>
-                </ReactBootStrap.InputGroup.Prepend>
-            <ReactBootStrap.FormControl as="textarea" aria-label="With textarea" name="content" onChange={e => setContent(e.target.value)}/>
-          </ReactBootStrap.InputGroup>
+            <input placeholder="Content" as="textarea" aria-label="With textarea" name="content" onChange={e => setContent(e.target.value)}/>
         </div>
         <div>
-          <h3>Caption:</h3>
-          <input name="caption" placeholder="caption goes here" onChange={e => setCaption(e.target.value)} required/>
+          <input  placeholder="content" name="caption" placeholder="caption goes here" onChange={e => setCaption(e.target.value)} required/>
         </div>
         <br />
         <button type="submit">Update Post!</button>

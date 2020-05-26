@@ -89,7 +89,7 @@ const Profile = props => {
   return (
     <div>
       <div id="userInfo">
-      <img src={props.user.pic} alt={props.user.firstname} />
+      <img class="profilePic" src={props.user.pic} alt={props.user.firstname} />
       <h1 id="profileName">
         {props.user.firstname}
       </h1>

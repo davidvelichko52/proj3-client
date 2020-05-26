@@ -75,6 +75,8 @@ nav a:hover {
 #userInfo{
   border: 3px solid black;
   border-radius: 20px;
+  width: 50%;
+  align: center;
   margin-bottom: 70px;
 }
 
@@ -103,4 +105,36 @@ nav a:hover {
 #morepic{
   height: 200px;
   width: auto;
+}
+
+input {
+  background-color:  rgb(245,245,220);
+  width: 23%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+  color: black;
+  padding: 5px;
+}
+
+textarea {
+  background-color:  rgb(245,245,220);
+  padding: 5px;
+  width: 37%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+  color: black;
+}
+
+button {
+  box-shadow: 0px 0px 20px black;
+  border-radius: 5px;
+  background-color: rgb(211, 247, 254);
+  padding: 5px;
+}
+
+.profilePic {
+  border-radius: 150px;
+
 }
