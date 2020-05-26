@@ -2,25 +2,8 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: lightslategray;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 main {
   padding: 50px 0;
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 footer {
@@ -28,79 +11,68 @@ footer {
   color: white;
   font-size: 16px;
   padding: 15px;
+  clear: both;
 }
 
-nav {
-  background-color: #282c34;
-  padding: 2px;
-}
-
-nav ul {
-  list-style-type: none;
-}
-
-nav li {
-  display: inline;
-  color: white;
-  margin-right: 25px;
-  float: left;
-}
-
-nav a,
-nav a:visited {
-  text-decoration: none;
-  font-size: 22px;
-  color: mediumspringgreen;
-}
-
-nav a:hover {
-  color: hotpink;
-}
-
-.red {
-  color: red;
-}
-
-#homepic{
-  height: 150px;
-  width: auto;
+#profilePic{
+    border: 4px solid black;
+    border-radius: 5px;
+    width: 101%; 
+    height: 100%; 
+    object-fit: contain;
+    box-shadow: 0px 0px 10px black;
 }
 
 #profileName{
-  font-size: 60px;
-  border: 3px solid black;
-  border-radius: 20px;
-  background-color: rgb(77, 151, 117);
-}
-#userInfo{
-  border: 3px solid black;
-  border-radius: 20px;
-  margin-bottom: 70px;
+  margin-top: 15px;
 }
 
-#homepost{
-  width: 25%;
-  height: 25%;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 20px black;
-  float: left;
-  color: black;
-  margin: 10px;
-}
-#profileposts{
-  border: 2px solid black;
-  width: 23%;
-  height: 25%;
-  padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 20px black;
-  float: left;
-  color: black;
-  margin: 10px;
+#profilePostPic{
+  width: 200px; 
+  height: 200px; 
+  object-fit: contain;
+  box-shadow: 0px 0px 10px black;
 }
 
-#morepic{
-  height: 200px;
-  width: auto;
+#profilePost{
+  
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: #c9c9c9;
+  float: left;
+  margin: 5px;
+  
+}
+
+#homePost{
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: #c9c9c9;
+  float: left;
+  margin: 5px;
+}
+
+#homePostPic{
+  width: 200px; 
+  height: 200px; 
+  object-fit: contain;
+  box-shadow: 0px 0px 10px black;
+}
+
+#morePic{
+  border: 4px solid black;
+  border-radius: 5px;
+  width: 51%; 
+  height: 50%; 
+  object-fit: contain;
+  box-shadow: 0px 0px 10px black;
+}
+
+
+#comtag{
+  text-decoration: underline;
+}
+
+#comment{
+  margin-top: 10px;
 }
