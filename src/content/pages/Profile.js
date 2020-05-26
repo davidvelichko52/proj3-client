@@ -62,11 +62,11 @@ const Profile = props => {
   }
 
 
-  
+
   var posters = props.posts.map((p) => {
     if (p.user === props.user._id) {
     return (
-      
+
 
  <div id="profilePost">
  < Link to={`/more/${p._id}`}>
@@ -75,11 +75,11 @@ const Profile = props => {
    <h2>{p.content}</h2>
    <h3>{p.caption}</h3>
    </Link>
-  <button onClick={() => {
+  <button class="edit" onClick={() => {
       handleDelete(p._id)
 
     }}><span role="img" aria-label="img">🗑</span></button>
-  <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} ><span role="img" aria-label="img">✏</span></button></Link>
+  <Link to={`/edit/${p._id}`}><button class="edit" onClick={(e) => props.handleCurrentPost(e, p._id)} ><span role="img" aria-label="img">✏</span></button></Link>
 
  </div>
 
@@ -90,7 +90,7 @@ const Profile = props => {
   return (
     <div>
       <div >
-      <img id="profilePic" src={props.user.pic} alt={props.user.firstname} />
+      <img src={props.user.pic} alt={props.user.firstname} />
       <h1 id="profileName">
         {props.user.firstname}
       </h1>

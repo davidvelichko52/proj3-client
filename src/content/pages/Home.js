@@ -47,20 +47,20 @@ const Home = props => {
 if (props.user){
   let posters = posts.map((p, index) => {
     return (
-      <div key={index} id="homePost" >
+      <div  class="posters" key={index} id="homePost" >
         <Link to={`/more/${p._id}`}>
         <img id="homePostPic" variant="top"  src={p.pic} alt={p.caption} />
         <p>{p.caption}</p>
       </Link>
 
-        <button onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍</span></button>
+        <button class="edit" onClick={() => {handleSubmit(p._id)}}><span role="img" aria-label="img">👍</span></button>
 
       </div>
     )
   })
     return (
 
-      <div>
+      <div >
         {posters}
       </div>
     )
