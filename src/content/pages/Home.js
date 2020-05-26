@@ -50,7 +50,7 @@ if (props.user){
         <img variant="top" id="homepic" src={p.pic} alt={p.caption} />
         <p>{p.caption}</p>
       </Link>
-        <button onClick={() => {handleSubmit(p._id)}}>Like</button>
+        <button onClick={() => {handleSubmit(p._id)}}>👍🏻</button>
       </div>
     )
   })
@@ -61,8 +61,8 @@ if (props.user){
     )
   }
 return (
-<div>
-  <h1> Welcome to our Social Media Site </h1>
+<div class= "home">
+  <h1> Welcome to FriendHub 😉 </h1>
 </div>
 )
 }

@@ -55,7 +55,7 @@ const Faves = props => {
                     getFaves()
                 })
             }} 
-            value={f.faveId}>Unlike</button>
+            value={f.faveId}>👎🏻</button>
           </div>
         )
       })
@@ -63,7 +63,7 @@ const Faves = props => {
     return (
         <div>
             <h1>
-                My Commodities
+                My Commodities: 
             </h1>
             {faveObjects}
         </div>
