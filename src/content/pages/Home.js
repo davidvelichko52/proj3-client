@@ -1,6 +1,9 @@
+
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {  Link } from 'react-router-dom'
+
+
 
 const Home = props => {
   let [posts, setPosts] = useState([])
@@ -26,7 +29,7 @@ const Home = props => {
     let token = localStorage.getItem('boilerToken')
     // e.preventDefault()
     fetch(process.env.REACT_APP_SERVER_URL + 'faves',{
-      method: 'POST', 
+      method: 'POST',
       body: JSON.stringify({
         userId: props.user._id,
         postId: postId
@@ -56,16 +59,19 @@ if (props.user){
     )
   })
     return (
+
       <div>
         {posters}
       </div>
     )
   }
+
 return (
 <div class= "home">
   <h1> Welcome to FriendHub 😉 </h1>
 </div>
 )
+
 
 
 }

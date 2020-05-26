@@ -77,8 +77,10 @@ const Profile = props => {
    </Link>
   <button onClick={() => {
       handleDelete(p._id)
+
     }}><span role="img" aria-label="img">🗑</span></button>
   <Link to={`/edit/${p._id}`}><button onClick={(e) => props.handleCurrentPost(e, p._id)} ><span role="img" aria-label="img">✏</span></button></Link>
+
  </div>
 
 

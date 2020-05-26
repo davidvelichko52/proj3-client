@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
+import * as ReactBootStrap from "react-bootstrap"
+
 
 
 // Resources and custom components
@@ -13,12 +15,12 @@ import Nav from './nav/Nav'
 const App = props => {
   // Declare state variables
   let [user, setUser] = useState(null)
- 
+
 
   // useEffect hook (on load)
   useEffect(() => {
     decodeToken()
-    
+
   }, []) // Empty array, meaning only run this on page load
 
   const decodeToken = () => {

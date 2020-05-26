@@ -56,6 +56,8 @@ footer {
   margin: 5px;
 }
 
+
+
 #homePostPic{
   width: 200px; 
   height: 200px; 
@@ -77,6 +79,35 @@ footer {
   text-decoration: underline;
 }
 
+
+input {
+  background-color:  rgb(245,245,220);
+  width: 23%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+  color: black;
+  padding: 5px;
+}
+
+textarea {
+  background-color:  rgb(245,245,220);
+  padding: 5px;
+  width: 37%;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px black;
+  color: black;
+}
+
+button {
+  box-shadow: 0px 0px 20px black;
+  border-radius: 5px;
+  background-color: rgb(211, 247, 254);
+  padding: 5px;
+}
+
 #comment{
   margin-top: 10px;
 }
+

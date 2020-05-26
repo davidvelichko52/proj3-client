@@ -1,6 +1,9 @@
 // Packages
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
+
 
 const Signup = props => {
   // Declare and initialize state variables
@@ -110,27 +113,24 @@ const Signup = props => {
     <div>
       <h2>Signup</h2>
       <span className="red">{message}</span>
+
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
-          <input name="firstname" placeholder="Your first name" onChange={e => setFirstname(e.target.value)} />
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input name="lastname" placeholder="Your last name" onChange={e => setLastname(e.target.value)} />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" onChange={e => setEmail(e.target.value)} />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" onChange={e => setPassword(e.target.value)} />
-        </div>
-        <div>
-          <label>Profile Pic URL:</label>
+        <FormGroup>
+
+          <input  name="firstname" placeholder="Your first name" onChange={e => setFirstname(e.target.value)} />
+        </FormGroup>
+          <FormGroup>
+                    <input  name="lastname" placeholder="Your last name" onChange={e => setLastname(e.target.value)} />
+        </FormGroup>
+          <FormGroup>
+            <input placeholder="email" type="email" name="email" onChange={e => setEmail(e.target.value)} />
+        </FormGroup>
+          <FormGroup>
+                  <input placeholder="password" type="password" name="password" onChange={e => setPassword(e.target.value)} />
+        </FormGroup>
+         <FormGroup>
             <button onClick={showUploadWidget}>Upload pics</button>
-        </div>
+        </FormGroup>
         <button type="submit">Sign Me Up!</button>
       </form>
     </div>
